@@ -1,4 +1,4 @@
-//own code
+# //own code
 class node:
     def __init__(self,val):
         self.val = val
@@ -54,7 +54,7 @@ print("peek method")
 q.peek()
 q.peek()
 
-//udemy course code
+# //udemy course code
 class Node:
     def __init__(self, value):
         self.value = value

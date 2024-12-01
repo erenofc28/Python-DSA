@@ -1,4 +1,4 @@
-// my own code
+# // my own code
 class node:
     def __init__(self,val):
         self.val = val
@@ -61,7 +61,7 @@ print("deleting value at postion at 2nd postion")
 ll.deleteAtPosition(2)
 ll.display()
 
-// udemy course solution
+# // udemy course solution
 class Node:
     def __init__(self, value):
         self.value = value

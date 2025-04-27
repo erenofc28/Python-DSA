@@ -125,5 +125,26 @@ quick_sort(my_list)
 
 print(my_list)
 
+# quick sort (simple implementation)
+def quick_sort(arr):
+    # Base case: arrays with fewer than 2 elements are already sorted
+    if len(arr) < 2:
+        return arr
+    
+    # Choose the pivot (we use the first element here)
+    pivot = arr[0]
+    
+    # Divide the array into two parts: less than pivot and greater than pivot
+    less = [i for i in arr[1:] if i <= pivot]  # Elements less than or equal to pivot
+    greater = [i for i in arr[1:] if i > pivot]  # Elements greater than pivot
+    
+    # Recursively sort the partitions and combine them with the pivot
+    return quick_sort(less) + [pivot] + quick_sort(greater)
+
+# Example usage
+my_list = [4, 6, 1, 7, 3, 2, 5]
+sorted_list = quick_sort(my_list)
+print("Sorted list:", sorted_list)
+
 
            

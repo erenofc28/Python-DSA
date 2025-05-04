@@ -146,5 +146,39 @@ my_list = [4, 6, 1, 7, 3, 2, 5]
 sorted_list = quick_sort(my_list)
 print("Sorted list:", sorted_list)
 
-
+# quick sort (linked list version)
+def quickSort(head):
+    if not head or not head.next:
+        return head
+        
+    def concat(left,pivot,right):
+        pivot.next = right
+        if left:
+            left_head = left
+            while left.next:
+                left = left.next
+            left.next = pivot
+            return left_head
+        return pivot
+        
+    pivot = head
+    left , right = Node(-1),Node(-1)
+    leftTail,rightTail = left,right
+    curr = pivot.next
+    while curr:
+        if curr.data < pivot.data:
+            leftTail.next = curr
+            leftTail = curr
+        else:
+            rightTail.next = curr
+            rightTail = curr
+        curr = curr.next
+        
+    leftTail.next = None
+    rightTail.next = None
+    
+    sorted_left = quickSort(left.next)
+    sorted_right = quickSort(right.next)
+    
+    return concat(sorted_left,pivot,sorted_right)
            
